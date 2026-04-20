@@ -1,67 +1,52 @@
 {
     "layer": "top",
-    "position": "left", // Ta barre est à gauche
-    "width": 45,        // Largeur de la sidebar
-    "spacing": 4,
-    "margin-left": 5,
-    "margin-top": 10,
-    "margin-bottom": 10,
-
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "network",
-        "pulseaudio",
-        "battery"
-    ],
+    "position": "left",
+    "width": 50,
+    "spacing": 0,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "battery", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
         "format-icons": {
             "active": "",
-            "default": ""
+            "default": ""
         }
     },
 
     "clock": {
-        // Format vertical pour l'heure
-        "format": "{:%H\n%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "{:%H\n%M\n--\n%d\n%m}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "on-scroll": 1,
+            "format": {
+                "today": "<span color='#ed94c1'><b><u>{}</u></b></span>"
+            }
+        }
     },
-
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "󰈀",
+        "format-wifi": "󰖩",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{essid} ({signalStrength}%)",
-        // C'EST ICI QUE CA SE PASSE :
-        "on-click": "nm-connection-editor",
-        "max-length": 50
+        "tooltip-format": "{essid}"
     },
 
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{volume}%",
         "format-muted": "󰝟",
-        "format-icons": {
-            "default": ["", "󰕾", ""]
-        },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "pavucontrol"
+        "on-click": "pavucontrol"
     },
 
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "󱐋",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{capacity}%"
+        "format": "{capacity}%\n{icon}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
     }
 }

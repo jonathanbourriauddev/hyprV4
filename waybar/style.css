@@ -1,55 +1,49 @@
-@import url("colors.css");
-
 * {
-    font-family: "JetBrainsMono Nerd Font", "Roboto";
-    font-size: 14px;
     border: none;
-    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: @base;
-    border-right: 2px solid @surface0;
-    color: @text;
+    background-color: rgba(36, 39, 58, 0.9);
+    border-right: 2px solid #ed94c1;
+    color: #cad3f5;
+    /* On force les marges à 0 pour coller aux bords */
+    margin: 0;
 }
 
-#custom-launcher {
-    font-size: 20px;
-    color: @blue;
-    padding: 15px 0;
+/* On remplace text-align par du padding pour l'horloge */
+#clock {
+    font-weight: bold;
+    color: #ed94c1;
+    padding: 15px 5px;
 }
 
 #workspaces {
-    margin: 5px 0;
+    margin-top: 10px;
 }
 
 #workspaces button {
-    padding: 10px 0;
-    color: @subtext0;
+    color: #ed94c1;
+    padding: 8px 0;
 }
 
 #workspaces button.active {
-    color: @mauve;
+    color: #f5bde6;
+    background: rgba(245, 189, 230, 0.1);
 }
 
-#clock {
-    color: @yellow;
-    font-weight: bold;
+#custom-power {
+    font-size: 22px;
+    color: #ee99a0;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+#battery, #pulseaudio, #network {
     padding: 10px 0;
 }
 
-#pulseaudio, #network, #battery {
-    font-size: 18px;
-    padding: 10px 0;
+#battery {
+    color: #a6da95;
 }
-
-#pulseaudio { color: @sapphire; }
-#network { color: @sky; }
-#battery { color: @green; }
-#battery.critical { color: @red; }
-#battery.warning { color: @orange; }
-
-#tray {
-    padding: 15px 0;
-}
-
