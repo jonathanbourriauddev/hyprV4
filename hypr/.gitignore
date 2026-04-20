@@ -1,0 +1,13 @@
+# On ignore les fichiers de log de Hyprland
+hyprland.log
+
+# On ignore les dossiers de crash
+crash/
+
+# On ignore les backups automatiques de certains éditeurs
+*~
+*.swp
+*.bak
+
+# Si jamais tu as des scripts avec des infos sensibles (clés API, etc.)
+.env
