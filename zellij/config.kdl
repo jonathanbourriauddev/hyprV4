@@ -21,3 +21,5 @@ themes {
 // (mais au début je te conseille de la laisser)
 default_layout "default"
 pane_frames false
+
+default_shell "fish"

@@ -1,14 +1,16 @@
 if status is-interactive
-    # Désactive le message de bienvenue
     set -g fish_greeting ""
-
-    # Initialise Starship
     starship init fish | source
-    
-    # Affiche le résumé système
-    fastfetch
-end
 
-# Tes Alias
-alias ls="eza --icons --group-directories-first"
-alias gs="git status"
+    # 1. On lance Zellij en premier s'il n'est pas là
+    if not set -q ZELLIJ
+        exec zellij
+    end
+
+    # 2. Une fois QU'ON EST DANS Zellij, on lance fastfetch
+    # On utilise une petite astuce pour ne le lancer que sur le premier panneau
+    if set -q ZELLIJ
+        # On vérifie si c'est la session par défaut (optionnel mais plus propre)
+        fastfetch
+    end
+end
