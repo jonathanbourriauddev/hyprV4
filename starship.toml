@@ -1,0 +1,36 @@
+# ----------------------------------------------------- 
+# STARSHIP CONFIG - STYLE KALI L-SHAPE (MAJ 2026)
+# ----------------------------------------------------- 
+
+format = '''
+[┌──\(](bold blue)[$username](bold white)[@](bold blue)[$hostname](bold white)[\)](bold blue)
+[└─](bold blue)[$directory](bold blue)[$git_branch$git_status](white)
+[#](bold blue) '''
+
+add_newline = false
+
+# LA CLÉ CORRECTE EST [username]
+[username]
+show_always = true
+style_user = 'bold white'
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+style = 'bold white'
+format = '[$hostname]($style)'
+
+[directory]
+style = 'bold cyan'
+truncation_length = 3
+truncation_symbol = '…/'
+format = '[$path]($style)'
+
+[git_branch]
+symbol = '  '
+style = 'bold white'
+format = 'on [$symbol$branch]($style) '
+
+[git_status]
+style = 'bold red'
+format = '([\[$all_status$ahead_behind\]]($style))'
