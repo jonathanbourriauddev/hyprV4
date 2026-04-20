@@ -1,11 +1,26 @@
 {
     "layer": "top",
     "position": "left",
-    "width": 50,
+    "width": 55,
     "spacing": 0,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "battery", "custom/power"],
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -17,7 +32,7 @@
     },
 
     "clock": {
-        "format": "{:%H\n%M\n--\n%d\n%m}",
+        "format": "{:%H\n%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
@@ -27,10 +42,22 @@
             }
         }
     },
+
     "network": {
         "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{essid}"
+        "tooltip-format": "{essid} {signalStrength}%"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{status}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
     },
 
     "pulseaudio": {
