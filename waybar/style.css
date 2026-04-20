@@ -1,0 +1,55 @@
+@import url("colors.css");
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Roboto";
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: @base;
+    border-right: 2px solid @surface0;
+    color: @text;
+}
+
+#custom-launcher {
+    font-size: 20px;
+    color: @blue;
+    padding: 15px 0;
+}
+
+#workspaces {
+    margin: 5px 0;
+}
+
+#workspaces button {
+    padding: 10px 0;
+    color: @subtext0;
+}
+
+#workspaces button.active {
+    color: @mauve;
+}
+
+#clock {
+    color: @yellow;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#pulseaudio, #network, #battery {
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+#pulseaudio { color: @sapphire; }
+#network { color: @sky; }
+#battery { color: @green; }
+#battery.critical { color: @red; }
+#battery.warning { color: @orange; }
+
+#tray {
+    padding: 15px 0;
+}
+
