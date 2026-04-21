@@ -1,0 +1,45 @@
+// Couleurs Catppuccin Mocha
+$bg: #1e1e2e;
+$mauve: #cba6f7;
+$blue: #89b4fa;
+$text: #cdd6f4;
+$subtext: #a6adc8;
+
+* {
+  all: unset;
+}
+
+.clock-box {
+  background-color: rgba($bg, 0.4);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.hour {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 120px;
+  font-weight: 800;
+  color: $mauve;
+}
+
+.sep {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 100px;
+  font-weight: 800;
+  color: $text;
+}
+
+.min {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 120px;
+  font-weight: 800;
+  color: $blue;
+}
+
+.date {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 28px;
+  font-weight: 500;
+  color: $subtext;
+  margin-top: 10px;
+}

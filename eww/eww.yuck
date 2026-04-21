@@ -1,0 +1,33 @@
+;; Définition des variables
+(defpoll hour :interval "1s" "date +%H")
+(defpoll min  :interval "1s" "date +%M")
+(defpoll date :interval "1h" "date '+%A %d %B'")
+
+;; Fenêtre de l'horloge
+(defwindow clock
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "600px"
+                               :height "300px"
+                               :anchor "center")
+           :stacking "bottom"
+           :exclusive false
+           :focusable false
+           :namespace "eww"
+  (clock_layout))
+
+;; Design du widget
+(defwidget clock_layout []
+  (box :class "clock-box" 
+       :orientation "v" 
+       :space-evenly false
+       :valign "center"
+       :halign "center"
+    (box :orientation "h" 
+         :spacing 20 
+         :halign "center"
+      (label :text hour :class "hour")
+      (label :text ":"    :class "sep")
+      (label :text min  :class "min"))
+    (label :text date :class "date" :halign "center")))
