@@ -1,0 +1,111 @@
+/* Palette Catppuccin Mocha */
+@define-color base     #1e1e2e;
+@define-color mantle   #181825;
+@define-color crust    #11111b;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+@define-color surface2  #585b70;
+@define-color text      #cdd6f4;
+@define-color mauve     #cba6f7;
+@define-color blue      #89b4fa;
+@define-color red       #f38ba8;
+@define-color green     #a6e3a1;
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  background-clip: border-box;
+}
+
+/* Fenêtre des notifications */
+.notification-row {
+  outline: none;
+}
+
+.notification {
+  border-radius: 15px;
+  margin: 6px 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  padding: 0;
+  background: @base;
+  border: 2px solid @mauve;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 15px;
+}
+
+.summary {
+  font-size: 16px;
+  font-weight: bold;
+  color: @mauve;
+}
+
+.body {
+  font-size: 14px;
+  color: @text;
+}
+
+/* Bouton fermer */
+.close-button {
+  background: @red;
+  color: @base;
+  border-radius: 100%;
+  padding: 2px;
+  margin: 8px;
+}
+
+/* Centre de contrôle */
+.control-center {
+  background: alpha(@base, 0.85);
+  border-radius: 20px;
+  border: 2px solid @mauve;
+  margin: 10px;
+  padding: 10px;
+}
+
+.widget-title > label {
+  color: @mauve;
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* Boutons d'action */
+.widget-buttons-grid {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background: @surface0;
+}
+
+.widget-buttons-grid > box > button {
+  background: @base;
+  border-radius: 15px;
+  margin: 5px;
+  padding: 10px;
+  color: @blue;
+  border: 1px solid @surface1;
+}
+
+.widget-buttons-grid > box > button:hover {
+  background: @surface1;
+  border: 1px solid @mauve;
+}
+
+/* MPRIS (Lecteur Musique) */
+.widget-mpris {
+  background: @surface0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.widget-mpris-player {
+  padding: 5px;
+}
+
+.widget-mpris-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: @mauve;
+}
