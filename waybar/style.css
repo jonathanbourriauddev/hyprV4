@@ -1,64 +1,67 @@
-* {
-    border: none;
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
-    font-size: 14px;
-}
-
+/* --- Base de la barre --- */
 window#waybar {
-    background-color: #24273a;
-    border-right: 2px solid #ed94c1;
-    color: #cad3f5;
+    background-color: rgba(30, 30, 46, 0.9); /* Mocha Base */
+    color: #cdd6f4;
+    border-right: 2px solid #cba6f7;
 }
 
-/* Espacement des blocs */
-#workspaces, #clock, #network, #bluetooth, #pulseaudio, #battery, #custom-power {
-    padding: 12px 0;
-}
-
-/* WORKSPACES (Haut) */
+/* --- Modules Left (Workspaces) --- */
 #workspaces {
-    margin-top: 10px;
+    margin: 5px 0;
 }
 
 #workspaces button {
-    color: #ed94c1;
-    padding: 5px 0;
+    padding: 10px 0;
+    color: rgba(205, 214, 244, 0.4); /* Chiffres inactifs discrets */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0;
 }
 
 #workspaces button.active {
-    color: #f5bde6;
+    color: #cba6f7; /* Mauve actif */
+    border-left: 3px solid #cba6f7;
+    background: rgba(203, 166, 247, 0.1);
 }
 
-/* HORLOGE (Milieu) */
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+/* --- Modules Center (Clock) --- */
 #clock {
+    color: #cba6f7;
     font-weight: bold;
-    color: #ed94c1;
+    padding: 10px 0;
+    font-family: "JetBrainsMono Nerd Font";
 }
 
-/* MODULES (Bas) */
-#network {
-    color: #8bd5ca;
-}
-
-#bluetooth {
-    color: #8aadf4;
+/* --- Modules Right (Systray, Battery, etc) --- */
+#network, #bluetooth, #pulseaudio, #battery, #custom-power {
+    padding: 12px 0;
+    margin: 5px 0;
     font-size: 18px;
 }
 
-#bluetooth.connected {
-    color: #b7bdf8;
+/* Couleurs spécifiques Catppuccin */
+#network { color: #89b4fa; }     /* Blue */
+#bluetooth { color: #89dceb; }   /* Sky */
+#pulseaudio { color: #fab387; }  /* Peach */
+#battery { 
+    color: #a6e3a1;              /* Green */
+    font-size: 14px; 
 }
-
-#pulseaudio {
-    color: #eed49f;
-}
-
-#battery {
-    color: #a6da95;
-}
-
-#custom-power {
-    font-size: 22px;
-    color: #ee99a0;
+#custom-power { 
+    color: #f38ba8;              /* Red */
     padding-bottom: 20px;
 }
+
+/* Tooltip (Calendrier) */
+tooltip {
+    background: #1e1e2e;
+    border: 1px solid #cba6f7;
+}
+tooltip label {
+    color: #cdd6f4;
+}
+
