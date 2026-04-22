@@ -28,27 +28,20 @@
         "all-outputs": true,
         "sort-by-number": true,
         "persistent-workspaces": {
-             "*": 5 
+             "*": 5
         }
     },
 
     "clock": {
         "format": "{:%H\n%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month",
-            "on-scroll": 1,
-            "format": {
-                "today": "<span color='#ed94c1'><b><u>{}</u></b></span>"
-            }
-        }
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
 
     "network": {
         "format-wifi": "󰖩",
         "format-ethernet": "󰈀",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{essid} {signalStrength}%",
+        "tooltip-format": "{essid}",
         "on-click": "nm-connection-editor"
     },
 
@@ -56,20 +49,20 @@
         "format": "",
         "format-connected": "󰂱",
         "format-disabled": "󰂲",
-        "tooltip-format": "{status}",
-        "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}",
         "on-click": "blueman-manager"
     },
 
     "pulseaudio": {
-        "format": "{volume}%",
-        "format-muted": "󰝟",
+        "format": "{icon}\n{volume}%",
+        "format-muted": "󰝟\n0%",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
         "on-click": "pavucontrol"
     },
 
     "battery": {
-        "format": "{capacity}%\n{icon}",
+        "format": "{icon}\n{capacity}%",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
@@ -79,4 +72,3 @@
         "tooltip": false
     }
 }
-

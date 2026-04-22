@@ -1,67 +1,57 @@
-/* --- Base de la barre --- */
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
 window#waybar {
-    background-color: rgba(30, 30, 46, 0.9); /* Mocha Base */
+    background-color: rgba(30, 30, 46, 0.9);
     color: #cdd6f4;
     border-right: 2px solid #cba6f7;
 }
 
-/* --- Modules Left (Workspaces) --- */
-#workspaces {
-    margin: 5px 0;
-}
-
 #workspaces button {
-    padding: 10px 0;
-    color: rgba(205, 214, 244, 0.4); /* Chiffres inactifs discrets */
+    padding: 10px 0px;
+    color: rgba(205, 214, 244, 0.4);
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 0;
 }
 
 #workspaces button.active {
-    color: #cba6f7; /* Mauve actif */
+    color: #cba6f7;
     border-left: 3px solid #cba6f7;
-    background: rgba(203, 166, 247, 0.1);
 }
 
-#workspaces button.urgent {
-    color: #f38ba8;
-}
-
-/* --- Modules Center (Clock) --- */
 #clock {
     color: #cba6f7;
     font-weight: bold;
-    padding: 10px 0;
-    font-family: "JetBrainsMono Nerd Font";
+    padding: 15px 0px;
+    font-size: 15px;
 }
 
-/* --- Modules Right (Systray, Battery, etc) --- */
 #network, #bluetooth, #pulseaudio, #battery, #custom-power {
-    padding: 12px 0;
-    margin: 5px 0;
-    font-size: 18px;
+    padding: 10px 0px;
+    margin: 5px 0px;
 }
 
-/* Couleurs spécifiques Catppuccin */
-#network { color: #89b4fa; }     /* Blue */
-#bluetooth { color: #89dceb; }   /* Sky */
-#pulseaudio { color: #fab387; }  /* Peach */
+#network { color: #89b4fa; font-size: 18px; }
+#bluetooth { color: #89dceb; font-size: 18px; }
+
+#pulseaudio { 
+    color: #fab387; 
+    font-size: 15px; 
+}
+
 #battery { 
-    color: #a6e3a1;              /* Green */
-    font-size: 14px; 
+    color: #a6e3a1; 
+    font-size: 15px; 
 }
+
 #custom-power { 
-    color: #f38ba8;              /* Red */
-    padding-bottom: 20px;
+    color: #f38ba8; 
+    font-size: 20px; 
+    padding-bottom: 20px; 
 }
 
-/* Tooltip (Calendrier) */
-tooltip {
-    background: #1e1e2e;
-    border: 1px solid #cba6f7;
+/* L'astuce pour le centrage vertical sans erreur GTK */
+label {
+    all: unset;
 }
-tooltip label {
-    color: #cdd6f4;
-}
-
