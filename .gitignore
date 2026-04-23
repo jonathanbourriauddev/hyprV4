@@ -1,1 +1,17 @@
+# KDE / Plasma
+.cache/
+.local/share/baloo/
+.local/share/kactivitymanagerd/
+kde.log
+
+# Fish (Perso & Sécurité)
+fish/functions/
+fish/fish_variables
+
+# Système & Autres
 cerveau/
+hyprland.log
+crash/
+*.bak
+*.swp
+.env

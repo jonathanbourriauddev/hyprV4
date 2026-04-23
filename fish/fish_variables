@@ -1,5 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR --export GEMINI_API_KEY:AIzaSyCAMjSWcqmqOYql5ks17aoMddm7Ggjlzok
-SETUVAR __fish_initialized:4300
-SETUVAR fish_greeting:
